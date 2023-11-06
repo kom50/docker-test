@@ -48,3 +48,57 @@ sudo docker exec -it scylla-container bash
 
 
 [Ref](https://chat.openai.com/share/ce2c68bb-54c2-4fb5-b910-f9c985fca1ab)
+
+
+## ScyllaDB CRUD operation
+
+## Create KeySpace in ScyllaDB 
+
+```
+CREATE KEYSPACE <KeySpace_name> WITH replication = {
+    'class': 'SimpleStrategy',
+    'replication_factor': 1
+};
+```
+
+## Use keyspace 
+
+```
+use <KeySpace_name>;
+```
+
+## Create Table 
+
+```
+CREATE TABLE items ( 
+   id uuid PRIMARY KEY,
+   name text, 
+   completed boolean
+);
+```
+## Insert data
+
+```
+INSERT INTO items (id, name, completed) VALUES (uuid(), 'Todo 1', false);
+```
+## Show table data
+
+```
+ SELECT *FROM items;
+```
+
+## Update table data
+
+```
+UPDATE items  SET completed = true WHERE id = 3699e2ae-a28c-45a3-ae9a;
+```
+
+## Delete table data
+
+```
+DELETE FROM todos.items WHERE id = 3699e2ae-a28c-45a3-ae9a;
+```
+
+**Screenshort**
+
+![Alt text](image-2.png)
