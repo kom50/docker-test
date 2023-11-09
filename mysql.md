@@ -7,7 +7,7 @@ docker network create todo-app
 ```
 
 #### Pull MySQL version 8 image
-```
+```javascript
 docker run -d \
     --network todo-app --network-alias mysql \
     -v todo-mysql-data:/var/lib/mysql \
@@ -20,7 +20,7 @@ docker run -d \
 - MYSQL_DATABASE=`<your-database-name>`
 
 # Run MySQL 
-```
+```python
 docker exec -it <mysql-container-id> mysql -u root -p
 ```
 
